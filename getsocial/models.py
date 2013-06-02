@@ -41,8 +41,8 @@ class Photo(models.Model):
     city = models.ForeignKey(City)
     cover_image = models.BooleanField(default = False)
     featured = models.BooleanField(default = False)
-    likes_count = models.IntegerField(max_length = 100)
-    comments_count = models.IntegerField(max_length = 100)
+    likes_count = models.IntegerField(max_length = 100, null = True, default = 0)
+    comments_count = models.IntegerField(max_length = 100, null = True, default = 0)
     created_at = models.DateTimeField(auto_now_add = True)
     modified_at = models.DateTimeField(auto_now = True)
     
