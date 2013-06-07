@@ -1,7 +1,53 @@
-<div>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit" value="Save"/>
-    </form>
-</div>
+{% extends "layouts/layout_popup.html" %}
+{% block popup_head %}
+    Add Image
+{% endblock %}
+{% block popup_body %}
+    {% if form %}
+        <form action="/getsocial/photos/add/" method="post" target="add-photo-iframe" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-container">
+                <label for="id_title">{{form.title.label}}</label>
+                {{form.title}}
+                <div class="input-message">{{form.title.errors.0}}</div>
+            </div>
+            <div class="input-container">
+                <label for="id_album">{{form.album.label}}</label>
+                {{form.album}}
+                <div class="input-message">{{form.album.errors.0}}</div>
+            </div>
+            <div class="input-container">
+                <label for="id_image" class="for-image">Select Image</label>
+                {{form.image}}
+                <div class="input-message">{{form.image.errors.0}}</div>
+            </div>
+            <div class="input-container">
+                <label for="id_city">{{form.city.label}}</label>
+                {{form.city}}
+                <div class="input-message">{{form.city.errors.0}}</div>
+            </div>
+            <div class="input-container">
+                <label for="id_featured">{{form.featured.label}}</label>
+                {{form.featured}}
+                <div class="input-message">{{form.featured.errors.0}}</div>
+            </div>
+            <div class="input-container">
+                <label for="id_cover_image">{{form.cover_image.label}}</label>
+                {{form.cover_image}}
+                <div class="input-message">{{form.cover_image.errors.0}}</div>
+            </div>
+            <div class="form-actions">
+                <input type="submit" value="Save"/>
+            </div>
+        </form>
+        <iframe id="add-photo-iframe" name="add-photo-iframe"></iframe>
+    {% else %}
+        <div id="add_photo_success_message"></div>
+    {% endif %}
+    
+{% endblock %}
+{% block page_scripts %}
+    <script type="text/javascript">
+        
+    </script>
+{% endblock %}

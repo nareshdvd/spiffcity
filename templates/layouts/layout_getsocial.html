@@ -4,106 +4,179 @@
     <head>
         <meta name="viewport" content="width=device-width">
         <link href="{{css_url}}common.css" type="text/css" rel="stylesheet"/>
+        <link href="{{css_url}}bootstrap.css" type="text/css" rel="stylesheet"/>
         {% block page_styles %}
             
         {% endblock %}
     </head>
     <body>
         <div class="header">
-            <div class="logo">
-                {% get_image_tag "logo.jpg" "" %}
-            </div>
-            <div class="menus">
-                <div class="menu">
-                    {% get_image_tag "menu1_on.png" "submenu_img" data="id:1" %}
-                    <div class="submenu">
-                        
-                    </div>
+            <div class="header-inner">
+                <button data-target=".nav-collapse" data-toggle="collapse" class="menudrop-btn" type="button">
+                    <span class="my_icon-bar"></span>
+                    <span class="my_icon-bar"></span>
+                    <span class="my_icon-bar"></span>
+                </button>
+                
+                <div class="header-left">
+                    <a>
+                        {% get_image_tag "logo.jpg" "" %}
+                    </a>
                 </div>
-                <div class="menu">
-                    {% get_image_tag "menu2_on.png" "submenu_img" data="id:2" %}
-                    <div class="submenu">
+                
+                
+                <div class="header-right">
+                    {% if not user.is_authenticated %}
+                        <div class="login-btn">
+                            {% get_image_tag "loginbtn1.png" "" %}
+                        </div>
+                        <div class="register-btn">
+                            {% get_image_tag "registerbtn1.png" "" %}
+                        </div>
+                    {% else %}
+                        <div class="user-box">
+                            <div>
+                                {% get_image_tag "my_image.jpg" "" width="32px" %}
+                                {% get_image_tag "darrow2.png" "" %}
+                            </div>
+                            <div>
+                                {{ user.username }}
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <div>
+                                <span>{% get_image_tag "sprofile1.png" "" data="image_hover_name:sprofile1_h.png;image_name:sprofile1.png" %}</span><span>Profile</span>
+                            </div>
+                            <div>
+                                <span>{% get_image_tag "sacc1.png" "" data="image_hover_name:sacc1_h.png;image_name:sacc1.png" %}</span><span>Accounts</span>
+                            </div>
+                            <div>
+                                <span>{% get_image_tag "sfred1.png" "" data="image_hover_name:sfred1_h.png;image_name:sfred1.png" %}</span><span>Friends</span>
+                            </div>
+                            <div id="add_box-opener">
+                                <span>{% get_image_tag "sadd1.png" "" data="image_hover_name:sadd1_h.png;image_name:sadd1.png" %}</span><span>Add</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                
+                
+                <div class="header-middle">
+                    <div class="menu" id="menu-1" data-child="submenu-1">
+                        <a>
+                            {% get_image_tag "menu1_on.png" "submenu_img" data="hoversrc:"|add:img_url|add:"menu1_hover.png" %}
+                            
+                        </a>
+                    </div>
+                    <div class="submenu" id="submenu-1" data-parent="menu-1">
                         <div>
-                            Popular
+                            <a>
+                                Map View
+                            </a>
                         </div>
                         <div>
-                            My Network
+                            <a>
+                                List View
+                            </a>
                         </div>
                         <div>
-                            Categories
-                            <div class="submenu-1">
+                            <a>
+                                Grid View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu" id="menu-2" data-child="submenu-2" >
+                        <a>
+                            {% get_image_tag "menu2_on.png" "submenu_img" data="hoversrc:"|add:img_url|add:"menu2_hover.png" %}
+                        </a>
+                    </div>
+                    <div class="submenu" id="submenu-2" data-parent="menu-2">
+                        <div>
+                            <a>
+                                Popular
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                My Network
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Categories
+                            </a>
+                            <div class="submenuitems">
                                 {% for category in all_categories %}
                                     <div>
-                                        {{ category.name }}
+                                        <a href="/getsocial/photos/category/{{category.id}}/">
+                                            {{ category.name }}
+                                        </a>
                                     </div>
                                 {% endfor %}
                             </div>
                         </div>
                         <div>
-                            Crowdcast
+                            <a>
+                                Crowdcast
+                            </a>
                         </div>
                         <div>
-                            Social Feed
+                            <a>
+                                Social Feed
+                            </a>
                         </div>
                         <div>
-                            Videos
+                            <a>
+                                Videos
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu" id="menu-3"  data-child="submenu-3" >
+                        <a>
+                            {% get_image_tag "menu3_on.png" "submenu_img" data="hoversrc:"|add:img_url|add:"menu3_hover.png" %}
+                        </a>
+                    </div>
+                    <div class="submenu" id="submenu-3" data-parent="menu-3">
+                        <div>
+                            <a>
+                                Social Rewards
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Dashboard
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="menu">
-                    {% get_image_tag "menu3_on.png" "submenu_img" data="id:3" %}
-                    <div class="submenu">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="header-right">
-                {% if not user.is_authenticated %}
-                    <div class="login-btn">
-                        {% get_image_tag "loginbtn1.png" "" %}
-                    </div>
-                    <div class="register-btn">
-                        {% get_image_tag "registerbtn1.png" "" %}
-                    </div>
-                {% else %}
-                    <div class="user-box">
-                        <div>
-                            {% get_image_tag "my_image.jpg" "" width="32px" %}
-                            {% get_image_tag "darrow2.png" "" %}
-                        </div>
-                        <div>
-                            {{ user.username }}
-                        </div>
-                    </div>
-                    <div class="user-actions">
-                        <div>
-                            <span>{% get_image_tag "sprofile1.png" "" data="image_hover_name:sprofile1_h.png;image_name:sprofile1.png" %}</span><span>Profile</span>
-                        </div>
-                        <div>
-                            <span>{% get_image_tag "sacc1.png" "" data="image_hover_name:sacc1_h.png;image_name:sacc1.png" %}</span><span>Accounts</span>
-                        </div>
-                        <div>
-                            <span>{% get_image_tag "sfred1.png" "" data="image_hover_name:sfred1_h.png;image_name:sfred1.png" %}</span><span>Friends</span>
-                        </div>
-                        <div>
-                            <span>{% get_image_tag "sadd1.png" "" data="image_hover_name:sadd1_h.png;image_name:sadd1.png" %}</span><span>Add</span>
-                        </div>
-                    </div>
-                {% endif %}
             </div>
         </div>
         <div class="content">
-            {% block content %}
+            <div class="content-inner">
+                {% block content %}
                 
-            {% endblock %}
+                {% endblock %}
+            </div>
         </div>
-        <div class="footer">
+        <!--<div id="overlay">
             
         </div>
+        <div id="spiff-popup">
+            
+        </div>-->
+        
+        <div class="modal hide">
+            <div class="modal-body">
+                
+            </div>
+        </div>
+        
+        
         {% get_script_tag "jquery.js" %}
+        {% get_script_tag "jquery.wookmark.js" %}
+        {% get_script_tag "imagesloaded.js" %}
+        {% get_script_tag "bootstrap.js" %}
         {% get_script_tag "common.js" %}
-        {% block page_scripts %}
-            
-        {% endblock %}
     </body>
 </html>

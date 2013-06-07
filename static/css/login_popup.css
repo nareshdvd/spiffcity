@@ -1,0 +1,48 @@
+.modal-body
+{
+    max-height: 531px !important;
+}
+.inner-logo
+{
+    position: relative;
+    width:350px;
+    height:133px;
+    top:100px;
+    left:220px;
+}
+.login-popup-header
+{
+    display: inline-block;
+    width:100%;
+}
+.login-popup-header div
+{
+    float:right;
+    margin-right:12px;
+    margin-top:10px;
+}
+.login-popup-header div div
+{
+    float:left;
+}
+.inner-login-text
+{
+    margin-top:184px;
+}
+.small-login
+{
+    float:right;
+    height: 100px;
+    width: 250px;
+}
+.small-login-head div
+{
+    float:right;
+    margin-right: 14px;
+}
+
+.small-login-head div span
+{
+    display: inline-block;
+    margin-right:10px;
+}
