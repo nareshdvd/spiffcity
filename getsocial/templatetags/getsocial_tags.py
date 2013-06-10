@@ -28,3 +28,12 @@ def get_image_tag(image_name,image_class="",*args,**kwargs):
 def get_script_tag(script_name):
     script_tag = "<script type='text/javascript' src='" + settings.STATIC_JS_URL + "" + script_name + "'></script>"
     return script_tag
+
+@register.simple_tag
+def get_style_tag(style_name):
+    script_tag = "<script type='text/javascript' src='" + settings.STATIC_JS_URL + "" + script_name + "'></script>"
+    return script_tag
+
+@register.filter
+def equals(var1,var2):
+    return (var1 == var2)

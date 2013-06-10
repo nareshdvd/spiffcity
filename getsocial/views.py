@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from lib.utils import Response, Imaging
 from getsocial.forms import PhotoForm, AlbumForm
 from getsocial.models import *
+from core.models import *
 
 
 

@@ -1,0 +1,22 @@
+{% load getsocial_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{css_url}}bootstrap.css" type="text/css" rel="stylesheet"/>
+        <link href="{{css_url}}temp.css" type="text/css" rel="stylesheet"/>
+        {% block page_styles %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid">
+            {% block content %}
+                
+            {% endblock %}
+        </div>
+        {% get_script_tag "jquery.js" %}
+        {% get_script_tag "jquery.wookmark.js" %}
+        {% get_script_tag "imagesloaded.js" %}
+        {% get_script_tag "bootstrap.js" %}
+    </body>
+</html>

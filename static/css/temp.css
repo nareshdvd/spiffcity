@@ -1,0 +1,189 @@
+@font-face
+{
+    font-family: 'corbertregular';
+    src: url('../fonts/corbert/regular/corbert-regular-webfont.eot');
+    src: url('../fonts/corbert/regular/corbert-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/corbert/regular/corbert-regular-webfont.woff') format('woff'),
+         url('../fonts/corbert/regular/corbert-regular-webfont.ttf') format('truetype'),
+         url('../fonts/corbert/regular/corbert-regular-webfont.svg#corbertregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body
+{
+    margin:0px;
+    font-family: 'corbertregular';
+    background: url("../img/page_bg.jpg") repeat;
+    color:#f1f1f1;
+}
+.registration-outer
+{
+    background-color:rgba(67,67,67,0.4);
+    padding:7px;
+    box-shadow: 0px 0px 5px 1px #1F1F1F;
+}
+.registration-inner
+{
+    background-color: #434343;
+    box-shadow: 0px 0px 10px 3px #1F1F1F;
+}
+
+.rounded-border-5
+{
+    border-radius: 5px;
+}
+.registration-submit
+{
+    background: url("../img/submit_bt1.png");
+    width:97px !important;
+    height:43px;
+    border:none;
+}
+.registration-div
+{
+    margin-top:100px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"]
+{
+    color: #EAEAEA;
+    background-color: #4A4A4A;
+    border: 1px solid #696464;
+    width:300px;
+}
+.registration-form legend
+{
+    color: #EAEAEA;
+}
+
+.page-heading
+{
+    color:#BABAAF;
+}
+
+
+.smenu
+{
+    float:left;
+    margin-left:-11px;
+}
+.smenu-div
+{
+    margin-bottom: 4px;
+    margin-left:10px;
+}
+.smenu a
+{
+    display: inline-block;
+    width:100%;
+    text-align: center;
+    margin-left:5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+    color:#8E8E8E;
+}
+.smenu a:hover
+{
+    color:#ffffff;
+}
+
+.smenu1_active
+{
+    background:url("../img/smenu1_hover.png") !important;
+    width:214px !important;
+    height:46px;
+}
+.smenu1_active a
+{
+    color:#ffffff !important;
+}
+.smenu2_active
+{
+    background:url("../img/smenu2_hover.png");
+    width:270px !important;
+    height:45px;
+    background-size: 270px 45px;
+}
+.smenu2_active a
+{
+    color:#ffffff !important;
+}
+.smenu3_active
+{
+    background:url("../img/smenu3_hover.png") !important;
+    width:215px !important;
+    height:45px;
+}
+.smenu3_active a
+{
+    color:#ffffff !important;
+}
+.smenu1
+{
+    background:url("../img/smenu1_on.png");
+    width:214px !important;
+    height:46px;
+}
+.smenu1:hover
+{
+    background:url("../img/smenu1_hover.png");
+}
+.smenu2
+{
+    background:url("../img/smenu2_on.png");
+    width:270px !important;
+    height:45px;
+    background-size: 270px 45px;
+}
+.smenu2:hover
+{
+    background:url("../img/smenu2_hover.png");
+    width:270px !important;
+    height:45px;
+    background-size: 270px 45px;
+}
+.smenu3
+{
+    background:url("../img/smenu3_on.png");
+    width:215px !important;
+    height:45px;
+}
+.smenu3:hover
+{
+    background:url("../img/smenu3_hover.png");
+}
+
+.loginstep-invite-form input[type="text"],
+.loginstep-invite-form input[type="email"]
+{
+    color: #EAEAEA;
+    background-color: #4A4A4A;
+    border: 1px solid #696464;
+    width:150px;
+    margin-right:10px;
+}
+
+.loginstep-invite-form .controls span
+{
+    width:155px;
+    margin-right:20px;
+    display: inline-block;
+}
+
+.border_1
+{
+    border:1px solid #696464;
+}
+
+.loginstep-invite-form textarea
+{
+    color: #EAEAEA;
+    background-color: #3A3A3A;
+    margin-left:4%;
+    width:87%;
+    margin-bottom:20px;
+}

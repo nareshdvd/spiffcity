@@ -2,19 +2,8 @@ from django.db import models
 from spiffcity import settings
 from time import gmtime, strftime
 from django.contrib.auth.models import User
+from core.models import Country,State,City
 
-# Create your models here.
-
-class Country(models.Model):
-    name = models.CharField(max_length = 200, unique = True, blank = False)
-
-class State(models.Model):
-    name = models.CharField(max_length = 200, unique = True, blank = False)
-    country = models.ForeignKey(Country)
-
-class City(models.Model):
-    name = models.CharField(max_length = 200, unique = True, blank = False)
-    state = models.ForeignKey(State)
 
 
 class Category(models.Model):

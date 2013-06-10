@@ -1,5 +1,6 @@
 from django import forms
-from getsocial.models import Album, City, Category
+from getsocial.models import Album, Category
+from core.models import City
 
 
 class AlbumForm(forms.Form):

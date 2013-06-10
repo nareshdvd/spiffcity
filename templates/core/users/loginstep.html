@@ -1,0 +1,40 @@
+{% extends "layouts/layout_temp.html" %}
+{% load getsocial_tags %}
+{% block content %}
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <h3 class="page-heading">Settings</h3>
+        </div>
+    </div>
+    <div class="row-fluid smenu-div">
+        <div class="span8 offset1">
+            
+            <div class=" smenu {% if step|equals:1 %} smenu1_active {% else %} smenu1 {% endif %}">
+                <a href="?step=1">Complete Your Profile</a>
+            </div>
+            <div class="smenu {% if step|equals:2 %} smenu2_active {% else %} smenu2  {% endif %}">
+                <a href="?step=2">Connect to social Network</a>
+            </div>
+            <div class="smenu {% if step|equals:3 %} smenu3_active {% else %} smenu3  {% endif %}">
+                <a href="?step=3">Invite Friends</a>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid loginstep-div">
+        <div class="span10 offset1 registration-outer rounded-border-5">
+            <div class="row-fluid">
+                <div class="span12 registration-inner rounded-border-5">
+                    {% if step|equals:1 %}
+                        {% include "core/users/loginstep1.html" %}
+                    {% else %}
+                        {% if step|equals:2 %}
+                            {% include "core/users/loginstep2.html" %}
+                        {% else %}
+                            {% include "core/users/loginstep3.html" %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
